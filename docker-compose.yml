@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+   nginx:
+     links:
+       - php
+     build: ./docker/nginx
+     ports:
+       - "80:80"
+       - "443:443"
+     restart: always
+     volumes:
+       - ./application:/var/www/html
+     volumes_from:
+       - php
+
+   php:
+     build: ./docker/php
+     restart: always
+     volumes:
+      - ./application:/var/www/html
