@@ -15,7 +15,17 @@ services:
        - php
 
    php:
+     links:
+       - mysql
      build: ./docker/php
      restart: always
      volumes:
       - ./application:/var/www/html
+
+   mysql:
+     build: ./docker/mysql
+     restart: always
+     ports:
+       - "3306:3306"
+     volumes:
+       - ./mysql:/var/lib/mysql
