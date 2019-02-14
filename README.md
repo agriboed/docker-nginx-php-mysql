@@ -1,4 +1,4 @@
-*** Nginx 1.15.8 + PHP 7.3 + Composer 1.8.4 + Xdebug 2.7 + MySQL 8.0 under Docker ***
+### Nginx 1.15.8 + PHP 7.3 + Composer 1.8.4 + Xdebug 2.7 + MySQL 8.0 under Docker
 
 * Install Docker and Docker-compose then run command in CLI:
 
@@ -6,11 +6,11 @@
 
 * In case you're going to use MySQL as well then run instead of command above:
 
-`docker-compose -f docker-compose.mysql build`
+`docker-compose -f docker-compose.mysql.yml build`
 
 * Then run:
 
-`docker-compose up -d`
+`docker-compose up -d` or `docker-compose -f docker-compose.mysql.yml up -d`
 
 * After open your browser with:
 
